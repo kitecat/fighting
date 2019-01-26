@@ -25,7 +25,7 @@ public class TextureManager {
     private TextureManager() {}
 
     public Texture getTexture(Integer id) {
-        if (id >= textures.size())
+        if ((id >= textures.size()) || (id < 0))
             return textures.get(0);
         return textures.get(id);
     }

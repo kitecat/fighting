@@ -15,6 +15,9 @@ public class Game extends ApplicationAdapter implements InputProcessor {
 	SpriteBatch batch;
 	Texture img, character1;
 	Controller controller;
+	View view;
+	float currentTime;
+	float lastTime;
 	
 	@Override
 	public void create () {
@@ -23,16 +26,26 @@ public class Game extends ApplicationAdapter implements InputProcessor {
 		img = TextureManager.getInst().getTexture("bg1");
 		character1 = TextureManager.getInst().getTexture(0);
 		controller = new Controller();
+        view = new View();
+        currentTime = lastTime = System.nanoTime() * 1E-9f;
 	}
 
 	@Override
 	public void render () {
-		Gdx.gl.glClearColor(1, 0, 0, 1);
+	    // Time
+        currentTime = System.nanoTime() * 1E-9f;
+        float deltaTime = (lastTime == 0) ? 0 : (currentTime - lastTime);
+        lastTime = currentTime;
+
+        // Draw
+        Gdx.gl.glClearColor(1, 0, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		batch.begin();
 		batch.draw(img, 0, 0);
 		batch.draw(character1, 0, 0);
 		batch.end();
+        view.Update(deltaTime);
+        view.Draw();
 	}
 
     @Override
