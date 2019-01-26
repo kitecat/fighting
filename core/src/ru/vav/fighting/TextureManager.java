@@ -22,9 +22,7 @@ public class TextureManager {
         }
     };
 
-    private TextureManager() {
-
-    }
+    private TextureManager() {}
 
     public Texture getTexture(Integer id) {
         if (id >= textures.size())
