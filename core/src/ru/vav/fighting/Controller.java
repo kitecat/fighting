@@ -2,18 +2,29 @@ package ru.vav.fighting;
 
 import com.badlogic.gdx.Input;
 
-import ru.vav.fighting.Model;
-
 public class Controller {
 
-    public void keyDown(int keycode) {
-        float moveAmount = 1.0f;
+    private Model model;
 
-        if (keycode == Input.Keys.A) {
-//            posX -= moveAmount;
-        }
-        if (keycode == Input.Keys.D) {
-//            posX += moveAmount;
+    public Controller() {
+        model = Model.getInst();
+    }
+
+    public void keyDown(int keycode) {
+
+        switch (keycode) {
+            case Input.Keys.W:
+                model.SendMessage(Messages.Player1, Messages.DirUp);
+                break;
+            case Input.Keys.A:
+                model.SendMessage(Messages.Player1, Messages.DirLeft);
+                break;
+            case Input.Keys.S:
+                model.SendMessage(Messages.Player1, Messages.DirDown);
+                break;
+            case Input.Keys.D:
+                model.SendMessage(Messages.Player1, Messages.DirRight);
+                break;
         }
     }
 }
