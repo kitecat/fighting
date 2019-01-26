@@ -8,6 +8,7 @@ public class ViewThing {
     Sprite sprite;
     Material material;
     Boolean visible;
+    Boolean playing;
 
     public ViewThing() {
         material = MaterialManager.getInst().getMaterial("default");
@@ -15,17 +16,21 @@ public class ViewThing {
         sprite.setSize(10, 10);
         sprite.setPosition(10, 10);
         visible = true;
+        playing = true;
     }
 
     public void setMaterial(Material mat) { material = mat.Copy(); }
     public void setSize(float width, float height) { sprite.setSize(width, height); }
     public void setPos(float x, float y) { sprite.setPosition(x, y); }
     public void setVisible(Boolean visible) { this.visible = visible; }
+    public void setPlaying(Boolean playing) { this.playing = playing; }
 
     public float getWidth() { return sprite.getWidth(); }
     public float getHeight() { return sprite.getHeight(); }
     public float getX() { return sprite.getY(); }
     public float getY() { return sprite.getX(); }
+    public Boolean getVisible() { return visible; }
+    public Boolean getPlaying() { return playing; }
 
     public void Draw(SpriteBatch batch) {
         if (!visible)
@@ -35,6 +40,7 @@ public class ViewThing {
     }
 
     public void Update(float deltaTime) {
-        material.Update(deltaTime);
+        if (playing)
+            material.Update(deltaTime);
     }
 }
