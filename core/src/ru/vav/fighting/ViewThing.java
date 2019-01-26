@@ -20,6 +20,7 @@ public class ViewThing {
     public void setMaterial(Material mat) { material = mat.Copy(); }
     public void setSize(float width, float height) { sprite.setSize(width, height); }
     public void setPos(float x, float y) { sprite.setPosition(x, y); }
+    public void setVisible(Boolean visible) { this.visible = visible; }
 
     public float getWidth() { return sprite.getWidth(); }
     public float getHeight() { return sprite.getHeight(); }
