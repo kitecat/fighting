@@ -39,4 +39,8 @@ public class StaticMaterial implements Material {
     @Override
     public void Update(float deltaTime) {}
 
+    @Override
+    public Material Copy() {
+        return new StaticMaterial(texture);
+    }
 }

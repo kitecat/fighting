@@ -8,12 +8,13 @@ import java.util.Iterator;
 public class AnimatedMaterial implements Material {
 
     private ArrayList<Texture> texture;
-    Timeline timeline;
-    float time;
+    private Timeline timeline;
+    private float time;
 
     public AnimatedMaterial(ArrayList<Texture> texture, Timeline timeline) {
         this.texture = texture;
         this.timeline = timeline;
+        time = 0;
     }
     public AnimatedMaterial() {
         this(new ArrayList<Texture>() {
@@ -59,4 +60,8 @@ public class AnimatedMaterial implements Material {
         time %= duration;
     }
 
+    @Override
+    public Material Copy() {
+        return new AnimatedMaterial(texture, timeline);
+    }
 }
