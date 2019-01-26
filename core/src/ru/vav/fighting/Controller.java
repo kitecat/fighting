@@ -25,6 +25,12 @@ public class Controller {
             case Input.Keys.D:
                 model.SendMessage(Messages.Player1, Messages.DirRight);
                 break;
+            case Input.Keys.T:
+                model.SendMessage(Messages.Player1, Messages.Punch);
+                break;
+            case Input.Keys.Y:
+                model.SendMessage(Messages.Player1, Messages.Block);
+                break;
         }
     }
 }

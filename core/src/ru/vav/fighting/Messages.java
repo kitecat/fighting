@@ -12,4 +12,5 @@ public class Messages {
     public final static int DirDown = 3;
     public final static int Punch = 4;
     public final static int Kick = 5;
+    public final static int Block = 6;
 }
