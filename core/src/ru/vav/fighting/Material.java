@@ -8,4 +8,6 @@ public interface Material {
 
     Texture GetTexture();
 
+    Material Copy();
+
 }

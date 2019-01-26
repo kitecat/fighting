@@ -30,28 +30,6 @@ public class ResourceManager {
         // Materials
         MaterialManager.getInst().addAnimatedMaterialByIDs("anim", anim, new Timeline(3, 1));
         // boy_idle
-//        boyIdle.add(boyIdle1);
-//        boyIdle.add(boyIdle1);
-//        boyIdle.add(boyIdle1);
-//        boyIdle.add(boyIdle1);
-//        boyIdle.add(boyIdle1);
-//        boyIdle.add(boyIdle1);
-//        boyIdle.add(boyIdle1);
-//        boyIdle.add(boyIdle1);
-//        boyIdle.add(boyIdle1);
-//        boyIdle.add(boyIdle3);
-//        boyIdle.add(boyIdle2);
-//        boyIdle.add(boyIdle1);
-//        boyIdle.add(boyIdle1);
-//        boyIdle.add(boyIdle1);
-//        boyIdle.add(boyIdle1);
-//        boyIdle.add(boyIdle1);
-//        boyIdle.add(boyIdle1);
-//        boyIdle.add(boyIdle1);
-//        boyIdle.add(boyIdle1);
-//        boyIdle.add(boyIdle1);
-//        boyIdle.add(boyIdle0);
-//        boyIdle.add(boyIdle0);
         boyIdle.add(boyIdle0);
         boyIdle.add(boyIdle1);
         boyIdle.add(boyIdle2);
