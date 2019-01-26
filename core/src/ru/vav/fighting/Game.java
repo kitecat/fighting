@@ -6,6 +6,8 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
+import ru.vav.fighting.TextureManager;
+
 public class Game extends ApplicationAdapter {
 	SpriteBatch batch;
 	Texture img, character1;
@@ -14,7 +16,7 @@ public class Game extends ApplicationAdapter {
 	public void create () {
 		batch = new SpriteBatch();
 		img = new Texture("bg1.png");
-		character1 = new Texture("character1.png");
+		character1 = TextureManager.getInst().getTexture(0);
 	}
 
 	@Override
@@ -23,6 +25,7 @@ public class Game extends ApplicationAdapter {
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		batch.begin();
 		batch.draw(img, 0, 0);
+		batch.draw(character1, 0, 0);
 		batch.end();
 	}
 	
@@ -30,5 +33,6 @@ public class Game extends ApplicationAdapter {
 	public void dispose () {
 		batch.dispose();
 		img.dispose();
+		character1.dispose();
 	}
 }
