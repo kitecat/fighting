@@ -22,7 +22,7 @@ public class Game extends ApplicationAdapter implements InputProcessor {
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
-        TextureManager.getInst().addTexture("bg1", "bg1.png");
+        TextureManager.getInst().addTexture("bg1", "room.png");
 		img = TextureManager.getInst().getTexture("bg1");
 		character1 = TextureManager.getInst().getTexture(0);
 		controller = new Controller();
@@ -41,7 +41,7 @@ public class Game extends ApplicationAdapter implements InputProcessor {
         Gdx.gl.glClearColor(1, 0, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		batch.begin();
-		batch.draw(img, 0, 0);
+		batch.draw(img, 0, 0, 1280, 720);
 		batch.draw(character1, 0, 0);
 		batch.end();
         view.Update(deltaTime);
