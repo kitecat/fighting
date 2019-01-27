@@ -40,8 +40,6 @@ public class View {
             return 0;
     }
 
-
-
     SpriteBatch batch;
     Sprite sprite;
     Material material;
@@ -49,9 +47,9 @@ public class View {
     public View() {
         ResourceManager.getInst();
         batch = new SpriteBatch();
-        material = MaterialManager.getInst().getMaterial("boy_idle");
+        material = MaterialManager.getInst().getMaterial("girl_idle");
         sprite = new Sprite(material.GetTexture());
-        sprite.setSize(100, 200);
+        sprite.setSize(100, 180);
         sprite.setPosition(10, 10);
     }
 
