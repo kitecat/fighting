@@ -1,10 +1,6 @@
 package ru.vav.fighting;
 
-import java.sql.Time;
 import java.util.ArrayList;
-
-import ru.vav.fighting.TextureManager;
-import ru.vav.fighting.MaterialManager;
 
 public class ResourceManager {
     private static ResourceManager inst = new ResourceManager();
@@ -53,41 +49,41 @@ public class ResourceManager {
         Integer boyPunch3 = TextureManager.getInst().addTexture("boy_punch_3", "boy_punch_3.png");
 
         // Materials
-//        MaterialManager.getInst().addAnimatedMaterialByIDs("anim", anim, new Timeline(3, 1));
+        MaterialManager.getInst().addAnimatedMaterialByIDs("anim", anim, new Timeline(3, 1));
         // boy_idle
-//        boyIdle.add(boyIdle0);
-//        boyIdle.add(boyIdle1);
-//        boyIdle.add(boyIdle2);
-//        boyIdle.add(boyIdle3);
-//        boyIdleTimeline.addFrame(new Timeline.KeyFrame(1, 0.6f));
-//        boyIdleTimeline.addFrame(new Timeline.KeyFrame(3, 0.075f));
-//        boyIdleTimeline.addFrame(new Timeline.KeyFrame(2, 0.075f));
-//        boyIdleTimeline.addFrame(new Timeline.KeyFrame(1, 0.6f));
-//        boyIdleTimeline.addFrame(new Timeline.KeyFrame(0, 0.15f));
-//        MaterialManager.getInst().addAnimatedMaterialByIDs("boy_idle", boyIdle, boyIdleTimeline);
-        // boy_walk
-//        boyWalk.add(boyWalk0);
-//        boyWalk.add(boyWalk1);
-//        boyWalk.add(boyWalk2);
-//        boyWalk.add(boyWalk3);
-//        boyWalkTimeline.addFrame(new Timeline.KeyFrame(0, 0.2f));
-//        boyWalkTimeline.addFrame(new Timeline.KeyFrame(1, 0.2f));
-//        boyWalkTimeline.addFrame(new Timeline.KeyFrame(2, 0.2f));
-//        boyWalkTimeline.addFrame(new Timeline.KeyFrame(3, 0.2f));
-//        MaterialManager.getInst().addAnimatedMaterialByIDs("boy_walk", boyWalk, boyWalkTimeline);
-        // boy_walk
-//        boyBlockWalk.add(boyBlockWalk0);
-//        boyBlockWalk.add(boyBlockWalk1);
-//        boyBlockWalk.add(boyBlockWalk2);
-//        boyBlockWalk.add(boyBlockWalk3);
-//        boyBlockWalk.add(boyBlockWalk4);
-//        boyBlockWalkTimeline.addFrame(new Timeline.KeyFrame(0, 0.2f));
-//        boyBlockWalkTimeline.addFrame(new Timeline.KeyFrame(1, 0.2f));
-//        boyBlockWalkTimeline.addFrame(new Timeline.KeyFrame(2, 0.2f));
-//        boyBlockWalkTimeline.addFrame(new Timeline.KeyFrame(3, 0.2f));
-//        boyBlockWalkTimeline.addFrame(new Timeline.KeyFrame(4, 0.2f));
-//        MaterialManager.getInst().addAnimatedMaterialByIDs("boy_block_walk", boyBlockWalk, boyBlockWalkTimeline);
-        // boy_punch
+        boyIdle.add(boyIdle0);
+        boyIdle.add(boyIdle1);
+        boyIdle.add(boyIdle2);
+        boyIdle.add(boyIdle3);
+        boyIdleTimeline.addFrame(new Timeline.KeyFrame(1, 0.6f));
+        boyIdleTimeline.addFrame(new Timeline.KeyFrame(3, 0.075f));
+        boyIdleTimeline.addFrame(new Timeline.KeyFrame(2, 0.075f));
+        boyIdleTimeline.addFrame(new Timeline.KeyFrame(1, 0.6f));
+        boyIdleTimeline.addFrame(new Timeline.KeyFrame(0, 0.15f));
+        MaterialManager.getInst().addAnimatedMaterialByIDs("boy_idle", boyIdle, boyIdleTimeline);
+//         boy_walk
+        boyWalk.add(boyWalk0);
+        boyWalk.add(boyWalk1);
+        boyWalk.add(boyWalk2);
+        boyWalk.add(boyWalk3);
+        boyWalkTimeline.addFrame(new Timeline.KeyFrame(0, 0.2f));
+        boyWalkTimeline.addFrame(new Timeline.KeyFrame(1, 0.2f));
+        boyWalkTimeline.addFrame(new Timeline.KeyFrame(2, 0.2f));
+        boyWalkTimeline.addFrame(new Timeline.KeyFrame(3, 0.2f));
+        MaterialManager.getInst().addAnimatedMaterialByIDs("boy_walk", boyWalk, boyWalkTimeline);
+//         boy_walk
+        boyBlockWalk.add(boyBlockWalk0);
+        boyBlockWalk.add(boyBlockWalk1);
+        boyBlockWalk.add(boyBlockWalk2);
+        boyBlockWalk.add(boyBlockWalk3);
+        boyBlockWalk.add(boyBlockWalk4);
+        boyBlockWalkTimeline.addFrame(new Timeline.KeyFrame(0, 0.2f));
+        boyBlockWalkTimeline.addFrame(new Timeline.KeyFrame(1, 0.2f));
+        boyBlockWalkTimeline.addFrame(new Timeline.KeyFrame(2, 0.2f));
+        boyBlockWalkTimeline.addFrame(new Timeline.KeyFrame(3, 0.2f));
+        boyBlockWalkTimeline.addFrame(new Timeline.KeyFrame(4, 0.2f));
+        MaterialManager.getInst().addAnimatedMaterialByIDs("boy_block_walk", boyBlockWalk, boyBlockWalkTimeline);
+//         boy_punch
         boyPunch.add(boyPunch0);
         boyPunch.add(boyPunch1);
         boyPunch.add(boyPunch2);
