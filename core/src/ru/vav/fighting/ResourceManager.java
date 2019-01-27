@@ -56,6 +56,14 @@ public class ResourceManager {
         Integer boyPunch1 = TextureManager.getInst().addTexture("boy_punch_1", "boy_punch_1.png");
         Integer boyPunch2 = TextureManager.getInst().addTexture("boy_punch_2", "boy_punch_2.png");
         Integer boyPunch3 = TextureManager.getInst().addTexture("boy_punch_3", "boy_punch_3.png");
+        // boy_hurt
+        Integer boyHurt = TextureManager.getInst().addTexture("boy_hurt", "boy_hurt.png");
+        // boy_block
+        Integer boyBlock = TextureManager.getInst().addTexture("boy_block", "boy_block.png");
+        // boy_win
+        Integer boyWin = TextureManager.getInst().addTexture("boy_win", "boy_win.png");
+        // boy_lose
+        Integer boyLose = TextureManager.getInst().addTexture("boy_lose", "boy_lose.png");
         // girl_idle
         Integer girlIdle0 = TextureManager.getInst().addTexture("girl_idle_0", "girl_idle_0.png");
         Integer girlIdle1 = TextureManager.getInst().addTexture("girl_idle_1", "girl_idle_1.png");
@@ -70,6 +78,10 @@ public class ResourceManager {
         Integer girlPunch0 = TextureManager.getInst().addTexture("girl_punch_0", "girl_punch_0.png");
         Integer girlPunch1 = TextureManager.getInst().addTexture("girl_punch_1", "girl_punch_1.png");
         Integer girlPunch2 = TextureManager.getInst().addTexture("girl_punch_2", "girl_punch_2.png");
+        // girl_punch
+        Integer girlHurt = TextureManager.getInst().addTexture("girl_hurt", "girl_hurt.png");
+        // girl_block
+        Integer girlBlock = TextureManager.getInst().addTexture("girl_block", "girl_block.png");
 
         // Materials
         MaterialManager.getInst().addAnimatedMaterialByIDs("anim", anim, new Timeline(3, 1));
@@ -116,6 +128,14 @@ public class ResourceManager {
         boyPunchTimeline.addFrame(new Timeline.KeyFrame(2, 0.2f));
         boyPunchTimeline.addFrame(new Timeline.KeyFrame(3, 0.2f));
         MaterialManager.getInst().addAnimatedMaterialByIDs("boy_punch", boyPunch, boyPunchTimeline);
+//        boy_hurt
+        MaterialManager.getInst().addStaticMaterialByID("boy_hurt", boyHurt);
+//        boy_hurt
+        MaterialManager.getInst().addStaticMaterialByID("boy_block", boyBlock);
+//        boy_win
+        MaterialManager.getInst().addStaticMaterialByID("boy_win", boyWin);
+        //boy_lose
+        MaterialManager.getInst().addStaticMaterialByID("boy_lose", boyLose);
 //        girl_idle
         girlIdle.add(girlIdle0);
         girlIdle.add(girlIdle1);
@@ -145,8 +165,11 @@ public class ResourceManager {
         girlPunchTimeline.addFrame(new Timeline.KeyFrame(0, 0.2f));
         girlPunchTimeline.addFrame(new Timeline.KeyFrame(2, 0.2f));
         girlPunchTimeline.addFrame(new Timeline.KeyFrame(1, 0.2f));
-
         MaterialManager.getInst().addAnimatedMaterialByIDs("girl_punch", girlPunch, girlPunchTimeline);
+//        girl_hurt
+        MaterialManager.getInst().addStaticMaterialByID("girl_hurt", girlHurt);
+//        girl_hurt
+        MaterialManager.getInst().addStaticMaterialByID("girl_block", girlBlock);
     }
 
     public static ResourceManager getInst() {
