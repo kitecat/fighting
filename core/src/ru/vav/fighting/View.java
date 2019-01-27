@@ -41,6 +41,10 @@ public class View {
     }
 
 
+    // Singleton
+    private static View inst = new View();
+    public static View getInst() { return inst; }
+
 
     SpriteBatch batch;
     Sprite sprite;
@@ -49,7 +53,7 @@ public class View {
     public View() {
         ResourceManager.getInst();
         batch = new SpriteBatch();
-        material = MaterialManager.getInst().getMaterial("boy_idle");
+        material = MaterialManager.getInst().getMaterial("boy_block_walk");
         sprite = new Sprite(material.GetTexture());
         sprite.setSize(100, 200);
         sprite.setPosition(10, 10);
