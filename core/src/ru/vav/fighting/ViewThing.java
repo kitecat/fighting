@@ -9,6 +9,7 @@ public class ViewThing {
     Material material;
     Boolean visible;
     Boolean playing;
+    Boolean mirror;
 
     public ViewThing() {
         material = MaterialManager.getInst().getMaterial("default");
@@ -17,6 +18,7 @@ public class ViewThing {
         sprite.setPosition(10, 10);
         visible = true;
         playing = true;
+        mirror = false;
     }
 
     public void setMaterial(Material mat) { material = mat.Copy(); }
@@ -24,6 +26,9 @@ public class ViewThing {
     public void setPos(float x, float y) { sprite.setPosition(x, y); }
     public void setVisible(Boolean visible) { this.visible = visible; }
     public void setPlaying(Boolean playing) { this.playing = playing; }
+
+    public void flip() { mirror = !mirror; }
+    public void setFlip(Boolean left) { mirror = left; }
 
     public float getWidth() { return sprite.getWidth(); }
     public float getHeight() { return sprite.getHeight(); }
@@ -36,7 +41,20 @@ public class ViewThing {
         if (!visible)
             return;
         sprite.setTexture(material.GetTexture());
-        sprite.draw(batch);
+        float x = getX();
+        float y = getY();
+        float width = getWidth();
+        float height = getHeight();
+        if (mirror)
+        {
+            setSize(-width, height);
+            setPos(x + width, y);
+            sprite.draw(batch);
+            setSize(width, height);
+            setPos(x, y);
+        }
+        else
+            sprite.draw(batch);
     }
 
     public void Update(float deltaTime) {

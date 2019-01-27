@@ -1,7 +1,9 @@
 package ru.vav.fighting;
 
-public class ModelThing {
+public interface ModelThing {
 
+    void Update(float timeDelta);
 
+    void Apply();
 
 }

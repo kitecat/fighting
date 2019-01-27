@@ -16,6 +16,7 @@ public class Game extends ApplicationAdapter implements InputProcessor {
 	Texture img, character1;
 	Controller controller;
 	View view;
+	Model model;
 	float currentTime;
 	float lastTime;
 	
@@ -26,7 +27,8 @@ public class Game extends ApplicationAdapter implements InputProcessor {
 		img = TextureManager.getInst().getTexture("bg1");
 		character1 = TextureManager.getInst().getTexture(0);
 		controller = new Controller();
-        view = new View();
+        view = View.getInst();
+        model = Model.getInst();
         currentTime = lastTime = System.nanoTime() * 1E-9f;
 	}
 
@@ -44,6 +46,8 @@ public class Game extends ApplicationAdapter implements InputProcessor {
 		batch.draw(img, 0, 0);
 		batch.draw(character1, 0, 0);
 		batch.end();
+        model.Update(deltaTime);
+        model.Apply();
         view.Update(deltaTime);
         view.Draw();
 	}
@@ -56,7 +60,8 @@ public class Game extends ApplicationAdapter implements InputProcessor {
 
     @Override
     public boolean keyUp(int keycode) {
-        return false;
+        controller.KeyUp(keycode);
+        return true;
     }
 
     @Override
