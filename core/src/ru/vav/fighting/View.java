@@ -40,12 +40,6 @@ public class View {
             return 0;
     }
 
-
-    // Singleton
-    private static View inst = new View();
-    public static View getInst() { return inst; }
-
-
     SpriteBatch batch;
     Sprite sprite;
     Material material;

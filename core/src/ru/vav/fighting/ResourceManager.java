@@ -69,7 +69,7 @@ public class ResourceManager {
         boyIdleTimeline.addFrame(new Timeline.KeyFrame(1, 0.6f));
         boyIdleTimeline.addFrame(new Timeline.KeyFrame(0, 0.15f));
         MaterialManager.getInst().addAnimatedMaterialByIDs("boy_idle", boyIdle, boyIdleTimeline);
-        // boy_walk
+//         boy_walk
         boyWalk.add(boyWalk0);
         boyWalk.add(boyWalk1);
         boyWalk.add(boyWalk2);
@@ -79,7 +79,7 @@ public class ResourceManager {
         boyWalkTimeline.addFrame(new Timeline.KeyFrame(2, 0.2f));
         boyWalkTimeline.addFrame(new Timeline.KeyFrame(3, 0.2f));
         MaterialManager.getInst().addAnimatedMaterialByIDs("boy_walk", boyWalk, boyWalkTimeline);
-        // boy_walk
+//         boy_walk
         boyBlockWalk.add(boyBlockWalk0);
         boyBlockWalk.add(boyBlockWalk1);
         boyBlockWalk.add(boyBlockWalk2);
@@ -91,7 +91,7 @@ public class ResourceManager {
         boyBlockWalkTimeline.addFrame(new Timeline.KeyFrame(3, 0.2f));
         boyBlockWalkTimeline.addFrame(new Timeline.KeyFrame(4, 0.2f));
         MaterialManager.getInst().addAnimatedMaterialByIDs("boy_block_walk", boyBlockWalk, boyBlockWalkTimeline);
-        // boy_punch
+//         boy_punch
         boyPunch.add(boyPunch0);
         boyPunch.add(boyPunch1);
         boyPunch.add(boyPunch2);
