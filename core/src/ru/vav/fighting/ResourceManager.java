@@ -1,10 +1,6 @@
 package ru.vav.fighting;
 
-import java.sql.Time;
 import java.util.ArrayList;
-
-import ru.vav.fighting.TextureManager;
-import ru.vav.fighting.MaterialManager;
 
 public class ResourceManager {
     private static ResourceManager inst = new ResourceManager();
@@ -24,6 +20,9 @@ public class ResourceManager {
         // boy_punch
         ArrayList<Integer> boyPunch = new ArrayList<Integer>();
         Timeline boyPunchTimeline = new Timeline();
+        // girl_idle
+        ArrayList<Integer> girlIdle = new ArrayList<Integer>();
+        Timeline girlIdleTimeline = new Timeline();
 
         // Textures
         // anim
@@ -51,6 +50,11 @@ public class ResourceManager {
         Integer boyPunch1 = TextureManager.getInst().addTexture("boy_punch_1", "boy_punch_1.png");
         Integer boyPunch2 = TextureManager.getInst().addTexture("boy_punch_2", "boy_punch_2.png");
         Integer boyPunch3 = TextureManager.getInst().addTexture("boy_punch_3", "boy_punch_3.png");
+        // boy_idle
+        Integer girlIdle0 = TextureManager.getInst().addTexture("girl_idle_0", "girl_idle_0.png");
+        Integer girlIdle1 = TextureManager.getInst().addTexture("girl_idle_1", "girl_idle_1.png");
+        Integer girlIdle2 = TextureManager.getInst().addTexture("girl_idle_2", "girl_idle_2.png");
+        Integer girlIdle3 = TextureManager.getInst().addTexture("girl_idle_3", "girl_idle_3.png");
 
         // Materials
         MaterialManager.getInst().addAnimatedMaterialByIDs("anim", anim, new Timeline(3, 1));
@@ -97,6 +101,17 @@ public class ResourceManager {
         boyPunchTimeline.addFrame(new Timeline.KeyFrame(2, 0.2f));
         boyPunchTimeline.addFrame(new Timeline.KeyFrame(3, 0.2f));
         MaterialManager.getInst().addAnimatedMaterialByIDs("boy_punch", boyPunch, boyPunchTimeline);
+        // boy_idle
+        girlIdle.add(girlIdle0);
+        girlIdle.add(girlIdle1);
+        girlIdle.add(girlIdle2);
+        girlIdle.add(girlIdle3);
+        girlIdleTimeline.addFrame(new Timeline.KeyFrame(1, 0.6f));
+        girlIdleTimeline.addFrame(new Timeline.KeyFrame(3, 0.075f));
+        girlIdleTimeline.addFrame(new Timeline.KeyFrame(2, 0.075f));
+        girlIdleTimeline.addFrame(new Timeline.KeyFrame(1, 0.6f));
+        girlIdleTimeline.addFrame(new Timeline.KeyFrame(0, 0.15f));
+        MaterialManager.getInst().addAnimatedMaterialByIDs("girl_idle", girlIdle, girlIdleTimeline);
     }
 
     public static ResourceManager getInst() {
