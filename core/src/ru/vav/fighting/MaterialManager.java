@@ -29,11 +29,11 @@ public class MaterialManager {
     public Integer addStaticMaterialByID(String materialName, int textureID) {
         return addMaterial(materialName, new StaticMaterial(textureID));
     }
-    public Integer addAnimatedMaterialByNames(String materialName, ArrayList<String> texturesNames, Timeline timeline) {
-        return addMaterial(materialName, AnimatedMaterial.FromStringArray(texturesNames, timeline));
+    public Integer addAnimatedMaterialByNames(String materialName, ArrayList<String> texturesNames, Timeline timeline, Boolean repeat) {
+        return addMaterial(materialName, AnimatedMaterial.FromStringArray(texturesNames, timeline, repeat));
     }
-    public Integer addAnimatedMaterialByIDs(String materialName, ArrayList<Integer> texturesIDs, Timeline timeline) {
-        return addMaterial(materialName, AnimatedMaterial.FromIDsArray(texturesIDs, timeline));
+    public Integer addAnimatedMaterialByIDs(String materialName, ArrayList<Integer> texturesIDs, Timeline timeline, Boolean repeat) {
+        return addMaterial(materialName, AnimatedMaterial.FromIDsArray(texturesIDs, timeline, repeat));
     }
 
     public Material getMaterial(Integer ID) {

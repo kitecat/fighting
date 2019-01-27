@@ -13,6 +13,6 @@ public class Player extends Character {
 
     @Override
     public void Update(float deltaTime) {
-        Move(velX, velZ);
+        Move(velX * deltaTime * 200, velZ * deltaTime * 200);
     }
 }

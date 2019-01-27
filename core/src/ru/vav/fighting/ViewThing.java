@@ -3,13 +3,14 @@ package ru.vav.fighting;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-public class ViewThing {
+public class ViewThing implements Comparable<ViewThing> {
 
     Sprite sprite;
     Material material;
     Boolean visible;
     Boolean playing;
     Boolean mirror;
+    float zorder = 0;
 
     public ViewThing() {
         material = MaterialManager.getInst().getMaterial("default");
@@ -26,14 +27,16 @@ public class ViewThing {
     public void setPos(float x, float y) { sprite.setPosition(x, y); }
     public void setVisible(Boolean visible) { this.visible = visible; }
     public void setPlaying(Boolean playing) { this.playing = playing; }
+    public void setZOrder(float z) { zorder = z; }
 
     public void flip() { mirror = !mirror; }
     public void setFlip(Boolean left) { mirror = left; }
 
     public float getWidth() { return sprite.getWidth(); }
     public float getHeight() { return sprite.getHeight(); }
-    public float getX() { return sprite.getY(); }
-    public float getY() { return sprite.getX(); }
+    public float getX() { return sprite.getX(); }
+    public float getY() { return sprite.getY(); }
+    public float getZOrder(float z) { return zorder; }
     public Boolean getVisible() { return visible; }
     public Boolean getPlaying() { return playing; }
 
@@ -60,5 +63,8 @@ public class ViewThing {
     public void Update(float deltaTime) {
         if (playing)
             material.Update(deltaTime);
+    }
+    public int compareTo(ViewThing person) {
+        return this.zorder > person.zorder ? -1 : this.zorder < person.zorder ? 1 : 0;
     }
 }

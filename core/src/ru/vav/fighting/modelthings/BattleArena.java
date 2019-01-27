@@ -17,6 +17,8 @@ public class BattleArena implements ModelThing {
 
     public BattleArena() {
         viewThingID = view.addThing("Arena", new ViewThing());
+        width = 1180;
+        height = 260;
     }
 
     public float getWidth() { return width; }

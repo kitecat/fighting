@@ -30,6 +30,8 @@ public class Game extends ApplicationAdapter implements InputProcessor {
         view = View.getInst();
         model = Model.getInst();
         currentTime = lastTime = System.nanoTime() * 1E-9f;
+
+        Gdx.input.setInputProcessor(this);
 	}
 
 	@Override
@@ -44,7 +46,7 @@ public class Game extends ApplicationAdapter implements InputProcessor {
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		batch.begin();
 		batch.draw(img, 0, 0, 1280, 720);
-		batch.draw(character1, 0, 0);
+		//batch.draw(character1, 0, 0);
 		batch.end();
         model.Update(deltaTime);
         model.Apply();

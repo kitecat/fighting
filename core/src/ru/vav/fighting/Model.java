@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import ru.vav.fighting.modelthings.BattleArena;
 import ru.vav.fighting.modelthings.Character;
 import ru.vav.fighting.modelthings.Player;
 
@@ -48,6 +49,7 @@ public class Model {
 
 
     public Model() {
+        addThing("Arena", new BattleArena());
         player1ID = addThing("Player1", new Player("boy"));
         player2ID = addThing("Player2", new Player("girl"));
     }
@@ -75,8 +77,8 @@ public class Model {
         int down = 0;
     }
 
-    PlayerKeys player1Keys;
-    PlayerKeys player2Keys;
+    PlayerKeys player1Keys = new PlayerKeys();
+    PlayerKeys player2Keys = new PlayerKeys();
 
     public void SendMessage(int msgID, int Message) {
         if ((msgID == Messages.Player1) || (msgID == Messages.Player2)) {
