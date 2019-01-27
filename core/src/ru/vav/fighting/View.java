@@ -47,7 +47,7 @@ public class View {
     public View() {
         ResourceManager.getInst();
         batch = new SpriteBatch();
-        material = MaterialManager.getInst().getMaterial("girl_idle");
+        material = MaterialManager.getInst().getMaterial("girl_punch");
         sprite = new Sprite(material.GetTexture());
         sprite.setSize(100, 180);
         sprite.setPosition(10, 10);
